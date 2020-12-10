@@ -18,13 +18,16 @@ For 資策會 前端工程師就業養成班MFEE13 - HTML5 JS API
 ### windows 安裝 sqlite3
 
 1. 用管理員權限啟動 powershell
-   npm install --global --production windows-build-tools
+```bash
+npm install --global --production windows-build-tools
+```
 
-2. npm i -g node-gyp
-   npm i -g node-pre-gyp
+2. 回到 vscode 的 terminal
 
-3. npm i sqlite3
-
+```bash
+npm i -g node-gyp node-pre-gyp
+npm i sqlite3
+```
 
 - for mac or linux
 ```bash
