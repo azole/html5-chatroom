@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/reset.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    block styles
+  body
+    include ../_includes/header
+
+    main#container
+      block content
+
+    include ../_includes/footer
+
+    script(src='/vendors/jquery.3.5.1.min.js')
+    block scripts

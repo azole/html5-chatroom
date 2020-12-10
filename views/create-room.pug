@@ -1,0 +1,62 @@
+extends _layouts/layout
+
+block styles
+  link(rel='stylesheet', href='/stylesheets/form.css')
+  link(rel='stylesheet', href='/stylesheets/avatar.css')
+
+block content
+  .content
+    form#createFrm(enctype="multipart/form-data", action="/room/create", method="POST")
+      section
+        fieldset
+          lable(for="roomTitle") 聊天室名稱： 
+            abbr(title="required") *
+          //- TODO: 加上長度限制與必填限制
+          input#roomTitle(type="text", name="roomTitle", autofocus, placeholder="聊天室名稱", maxlength="10", required)
+
+        fieldset
+          lable(for="subject") 聊天室主題： 
+            abbr(title="required") *
+          //- TODO: 加上必填限制與選擇建議清單
+          input#subject(type="type", name="subject", placeholder="聊天主題")
+
+        fieldset
+          lable(for="brief") 聊天室簡介： 
+          textarea#brief(name="brief", placeholder="聊天室簡介", rows=5, maxlength=140)
+
+        fieldset
+          lable(for="email") email: 
+            abbr(title="required") *
+          //- TODO: 加上必填限制與email格式限制
+          input#email(type="text", name="email", placeholder="email")
+
+        fieldset
+          lable(for="nickname") 暱稱: 
+            abbr(title="required") *
+          //- TODO: 加上必填限制與長度限制
+          input#nickname(type="text", name="nickname", placeholder="聊天暱稱")
+
+        fieldset
+          lable(for="avatarInput") 頭像: 
+            abbr(title="required") *
+          input#avatarInput(type="file", name="avatar", accept="image/*", style={display: "none"})
+          a#fileSelect(href="#") 選擇檔案
+
+      section
+        #avatarEditor
+          p#avatorPlaceholder 拖曳圖片上傳
+          canvas#avatarCanvas(width=600, height=600, style={display: "none"})
+          //- TODO: 加上允許拖曳的設定
+          div#clipRange(style={display: "none"})
+        #clipBtn.btn(style={display: "none"}) 裁剪
+
+        fieldset
+          //- TODO: 加上顏色選擇
+          input#paintColor.painting(type="text")
+          //- TODO: 加上範圍選擇: 需設定最小值、最大值、初始值
+          input#paintWidth.painting(type="text")
+          #saveBtn.btn.painting 儲存
+      button#createBtn 建立
+block scripts
+  script(src="/javascripts/create-room.js")
+    

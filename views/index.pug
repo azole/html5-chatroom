@@ -1,0 +1,11 @@
+extends _layouts/layout
+
+block content
+  .content
+    .home-intro.common-bg-img#homeImg(style={'background-image': 'url(/images/home.jpg)'})
+    .home-intro#homeVideo(style={display: "none"})
+      //- TODO: 加上影片播放 影片來源 "/media/home.mp4"
+
+block scripts
+  script(src="/javascripts/geolocation.js")
+    

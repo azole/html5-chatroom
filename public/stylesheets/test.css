@@ -1,0 +1,22 @@
+#board {
+  border: 1px solid #000;
+}
+
+.area {
+  width: 400px;
+  height: 400px;
+  display: inline-block;
+}
+#areaA {
+  background-color: green;
+}
+  
+#areaB {
+  background-color: blue;
+}
+
+#obj {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}

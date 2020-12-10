@@ -1,0 +1,28 @@
+extends _layouts/layout
+
+block styles
+  link(rel='stylesheet', href='/stylesheets/table.css')
+
+block content
+  .content
+    table.styled-table
+      thead
+        tr
+          th 聊天室名稱
+          th 聊天室主題
+          th 聊天室簡介
+          th 管理員
+          th 加入聊天
+      tbody
+        each room in rooms
+          tr
+            td #{room.name}
+            td #{room.subject}
+            td #{room.brief}
+            td #{room.nickname}
+              img(src="images/avatar/" + room.adminer + '.png', width="60px")
+            td
+              a(href="/room/" + room.id) 加入
+
+
+    

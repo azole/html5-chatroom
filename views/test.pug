@@ -1,0 +1,17 @@
+extends _layouts/layout
+
+block styles
+  link(rel='stylesheet', href='/stylesheets/test.css')
+
+block content
+  section
+    canvas#board(width=300, height=300)
+
+  hr
+  section
+    div#areaA.area
+      div#obj(draggable="true")
+    div#areaB.area
+
+block scripts
+  script(src="/javascripts/dragdrop.js")

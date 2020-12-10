@@ -1,0 +1,39 @@
+extends _layouts/layout
+
+block styles
+  link(rel='stylesheet', href='/stylesheets/room.css')
+
+block content
+  .content
+    sidebar#intro
+      ul
+        li 聊天室名稱: #{room.name}
+        li 主題: #{room.subject}
+        li 介紹: #{room.brief}
+        li 管理員: #{room.nickname}
+        li 
+          img(src="/images/avatar/" + room.adminer + '.png', width="60px")
+      section#connect.operation
+        fieldset
+          lable(for="nickname") 匿名： 
+            abbr(title="required") *
+          input#nickname(type="text", name="nickname", autofocus, placeholder="暱稱", maxlength="10", required)
+        button#joinBtn 加入聊天
+      section#disconnect.operation
+        #name 
+        button#closeBtn 關閉連線
+    section#roomContainer
+      section#messagesBox
+        #messages
+      section#inputBox
+        fieldset
+          lable(for="message") 訊息： 
+          input#message(type="text", name="message", placeholder="輸入訊息...", required)
+        button#sendBtn 送出
+
+
+
+block scripts
+  script.
+    let room = !{JSON.stringify(room)};
+  script(src="/javascripts/room.js")
