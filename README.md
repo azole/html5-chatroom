@@ -29,14 +29,16 @@ npm i -g node-gyp node-pre-gyp
 npm i sqlite3
 ```
 
-- for mac or linux
-```bash
-DEBUG=html5-chatroom:* npm run devstart
-```
+### 啟動專案
 
 - for windows
 ```bash
 npm run devstart
+```
+
+- for mac or linux
+```bash
+DEBUG=html5-chatroom:* npm run devstart
 ```
 
 ## Demo DB
